@@ -184,7 +184,7 @@ function redo(state, request) {
   const { actor, seq, deps, message } = request
   const change = Map({ actor, seq, deps: fromJS(deps), message, ops: redoOps })
 
-  const opSet = state.get('opSet')
+  let opSet = state.get('opSet')
     .update('undoPos', undoPos => undoPos + 1)
     .update('redoStack', stack => stack.pop())
 
