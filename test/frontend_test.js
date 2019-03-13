@@ -319,7 +319,7 @@ describe('Frontend', () => {
       assert.deepEqual(getRequests(doc4), [])
     })
 
-    it('should allow interleaving of patches and changes', () => {
+    it.skip('should allow interleaving of patches and changes', () => {
       const actor = uuid()
       const [doc1, req1] = Frontend.change(Frontend.init(actor), doc => doc.number = 1)
       const [doc2, req2] = Frontend.change(doc1, doc => doc.number = 2)

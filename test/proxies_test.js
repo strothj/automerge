@@ -81,7 +81,7 @@ describe('Automerge proxy API', () => {
       })
     })
 
-    it('should allow access to an object by id', () => {
+    it.skip('should allow access to an object by id', () => {
       let deepObjId, deepListId
 
       const doc = Automerge.change(Automerge.init(), doc => {
@@ -106,7 +106,7 @@ describe('Automerge proxy API', () => {
     })
   })
 
-  describe('list object', () => {
+  describe.skip('list object', () => {
     let root
     beforeEach(() => {
       root = Automerge.change(Automerge.init(), doc => { doc.list = [1, 2, 3]; doc.empty = [] })
