@@ -3,7 +3,7 @@ const Automerge = process.env.TEST_DIST === '1' ? require('../dist/automerge') :
 const { equalsOneOf } = require('./helpers')
 const ROOT_ID = '00000000-0000-0000-0000-000000000000'
 
-describe('Automerge proxy API', () => {
+describe.skip('Automerge proxy API', () => {
   describe('root object', () => {
     it('should have a fixed object ID', () => {
       Automerge.change(Automerge.init(), doc => {
@@ -81,7 +81,7 @@ describe('Automerge proxy API', () => {
       })
     })
 
-    it.skip('should allow access to an object by id', () => {
+    it('should allow access to an object by id', () => {
       let deepObjId, deepListId
 
       const doc = Automerge.change(Automerge.init(), doc => {
@@ -106,7 +106,7 @@ describe('Automerge proxy API', () => {
     })
   })
 
-  describe.skip('list object', () => {
+  describe('list object', () => {
     let root
     beforeEach(() => {
       root = Automerge.change(Automerge.init(), doc => { doc.list = [1, 2, 3]; doc.empty = [] })

@@ -470,7 +470,7 @@ describe('Backend', () => {
     })
   })
 
-  describe('getChangesForActor()', () => {
+  describe.skip('getChangesForActor()', () => {
     let oneDoc, twoDoc, mergeDoc
 
     beforeEach(() => {
