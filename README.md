@@ -1,3 +1,15 @@
+This is a fork of [Automerge](https://github.com/automerge/automerge).
+It provides an ES module bundle without transpilation.
+The API remains the same.
+
+```shell
+npm install automerge-es
+```
+
+```shell
+yarn add automerge-es
+```
+
 # Automerge
 
 💬 [Join the Automerge Slack community](https://communityinviter.com/apps/automerge/automerge)
