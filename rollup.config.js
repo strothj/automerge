@@ -42,12 +42,22 @@ export default automerge;
     output: {
       file: "dist/automerge-es.min.js",
       format: "esm",
-      sourcemap: true
+      sourcemap: true,
+      freeze: false
     },
 
     external: id => !id.startsWith("."),
 
-    plugins: [resolve(), terser(), emitTypeDefinitionsPlugin()]
+    plugins: [
+      resolve(),
+      terser({
+        // If this is not disabled, errors saying things are readonly will be
+        // thrown when running Automerge.from under certain environments
+        // (Metro or Jest).
+        mangle: false
+      }),
+      emitTypeDefinitionsPlugin()
+    ]
   };
 }
 
